@@ -1,0 +1,80 @@
+{
+  "qualidade": {
+    "linhas": 253680,
+    "colunas": 22,
+    "nulos": 0,
+    "duplicadas": 24206,
+    "prevalencia_alvo": 0.13933301797540207,
+    "linhas_apos_limpeza": 229474,
+    "prevalencia_apos_limpeza": 0.1529454317264701
+  },
+  "modelos": {
+    "Baseline (classe majoritária)": {
+      "recall": 0.0,
+      "precisao": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.5,
+      "pr_auc": 0.1529
+    },
+    "Regressão Logística": {
+      "recall": 0.7601,
+      "precisao": 0.3183,
+      "f1": 0.4487,
+      "roc_auc": 0.8106,
+      "pr_auc": 0.4121
+    },
+    "Random Forest": {
+      "recall": 0.7434,
+      "precisao": 0.3334,
+      "f1": 0.4604,
+      "roc_auc": 0.8171,
+      "pr_auc": 0.442
+    },
+    "Gradient Boosting": {
+      "recall": 0.7975,
+      "precisao": 0.3165,
+      "f1": 0.4532,
+      "roc_auc": 0.819,
+      "pr_auc": 0.4456
+    }
+  },
+  "campeao": "Gradient Boosting",
+  "limiar_triagem": 0.47,
+  "campeao_limiar_triagem": {
+    "recall": 0.8223,
+    "precisao": 0.3052,
+    "f1": 0.4452,
+    "roc_auc": 0.819,
+    "pr_auc": 0.4456
+  },
+  "balanceamento": {
+    "Sem tratamento": {
+      "recall": 0.154,
+      "precisao": 0.5408,
+      "f1": 0.2397,
+      "roc_auc": 0.8102,
+      "pr_auc": 0.4142
+    },
+    "Pesos de classe": {
+      "recall": 0.7601,
+      "precisao": 0.3183,
+      "f1": 0.4487,
+      "roc_auc": 0.8106,
+      "pr_auc": 0.4121
+    },
+    "Subamostragem": {
+      "recall": 0.7572,
+      "precisao": 0.318,
+      "f1": 0.4479,
+      "roc_auc": 0.8104,
+      "pr_auc": 0.4119
+    },
+    "SMOTE": {
+      "recall": 0.7578,
+      "precisao": 0.3185,
+      "f1": 0.4485,
+      "roc_auc": 0.808,
+      "pr_auc": 0.4085
+    }
+  }
+}
