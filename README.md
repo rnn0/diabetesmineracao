@@ -1,5 +1,7 @@
 # Predição de risco de diabetes (ODS 3)
 
+[![CI](https://github.com/rnn0/diabetesmineracao/actions/workflows/ci.yml/badge.svg)](https://github.com/rnn0/diabetesmineracao/actions)
+
 Projeto de Mineração de Dados com a base **Diabetes Health Indicators** (BRFSS 2015, CDC).
 Triagem de pré-diabetes/diabetes para apoiar a prevenção, com foco em **ODS 3** e ligações com **ODS 10** e **ODS 2**.
 
@@ -16,6 +18,7 @@ Triagem de pré-diabetes/diabetes para apoiar a prevenção, com foco em **ODS 3
 | `app/` | API FastAPI (`/health`, `/predict`) |
 | `tests/` | 8 testes pytest |
 | `notebooks/` | análise CRISP-DM completa, já executada |
+| `docs/` | relatório acadêmico (`relatorio_projeto_diabetes_ods3.docx`) e script que o gera |
 | `reports/` | métricas (`metrics.json`) e figuras |
 | `models/` | modelo treinado (`modelo.joblib`) |
 

@@ -28,7 +28,9 @@ const bullets = (arr) => arr.map((t, i) => ({ text: t, options: { bullet: true, 
 let s = pres.addSlide(); s.background = { color: DARK };
 s.addText("Predição de risco de diabetes", { x: 0.7, y: 1.6, w: 8.6, h: 0.9, fontFace: F, fontSize: 38, bold: true, color: "FFFFFF", margin: 0, isTextBox: true });
 s.addText("Triagem com mineração de dados para apoiar a prevenção", { x: 0.7, y: 2.55, w: 8.6, h: 0.5, fontFace: F, fontSize: 18, color: "BFD7EE", margin: 0, isTextBox: true });
-s.addText("ODS 3 · Saúde e Bem-Estar  |  Base: BRFSS 2015 (CDC) via Kaggle  |  CRISP-DM", { x: 0.7, y: 4.5, w: 8.6, h: 0.4, fontFace: F, fontSize: 12, color: "BFD7EE", margin: 0, isTextBox: true });
+s.addText("ODS 3 · Saúde e Bem-Estar  |  Base: BRFSS 2015 (CDC) via Kaggle  |  CRISP-DM", { x: 0.7, y: 4.3, w: 8.6, h: 0.4, fontFace: F, fontSize: 12, color: "BFD7EE", margin: 0, isTextBox: true });
+
+s.addText("github.com/rnn0/diabetesmineracao", { x: 0.7, y: 4.75, w: 8.6, h: 0.35, fontFace: F, fontSize: 12, bold: true, color: "FFFFFF", margin: 0, isTextBox: true });
 
 // 2 problema
 s = base("Problema, ODS e metodologia", "1 · ENTENDIMENTO DO PROBLEMA E CRISP-DM");
@@ -96,11 +98,13 @@ s.addText(bullets([
   "API com validação (Pydantic): endpoints /health e /predict.",
   "Seed fixa, requirements.txt e Makefile (make train report test).",
   "8 testes com pytest (dados, pipeline, limiar e API), todos passando.",
-  "Dockerfile e GitHub Actions rodando testes e build a cada push.",
+  "GitHub Actions a cada push: testes e build do Docker passando.",
 ]), { x: 0.6, y: 2.7, w: 8.8, h: 2.3, fontFace: F, fontSize: 14, color: DARK, valign: "top", margin: 0, isTextBox: true });
 
+s.addText("Repositório: github.com/rnn0/diabetesmineracao", { x: 0.6, y: 4.95, w: 8.8, h: 0.3, fontFace: F, fontSize: 12, bold: true, color: BLUE, margin: 0, isTextBox: true });
+
 // 8 demo
-s = base("Demonstração e próximos passos", "8 · APRESENTAÇÃO E DEMONSTRAÇÃO");
+s = base("Demonstração e conclusões", "8 · APRESENTAÇÃO E DEMONSTRAÇÃO");
 s.addShape(pres.ShapeType.rect, { x: 0.6, y: 1.5, w: 5.2, h: 3.0, fill: { color: "0F1F2E" }, line: { color: "0F1F2E" } });
 s.addText([
   { text: "POST /predict", options: { color: "7FC1FF", bold: true, breakLine: true } },
@@ -112,8 +116,11 @@ s.addText([
   { text: "IMC 22, ativo, saúde geral 1, renda alta", options: { color: "D8E6F3", breakLine: true } },
   { text: "→ probabilidade 0,02 · baixo risco", options: { color: "9FE3B0", bold: true } },
 ], { x: 0.85, y: 1.7, w: 4.8, h: 2.6, fontFace: "Courier New", fontSize: 12, valign: "top", margin: 0, isTextBox: true });
-s.addText("Próximos passos", { x: 6.2, y: 1.5, w: 3.3, h: 0.35, fontFace: F, fontSize: 15, bold: true, color: DARK, margin: 0, isTextBox: true });
-s.addText(bullets(["Calibrar as probabilidades.", "Validar com dados brasileiros (ex.: PNS).", "Testar com profissionais de saúde antes de qualquer uso real."]),
-  { x: 6.2, y: 1.95, w: 3.3, h: 2.6, fontFace: F, fontSize: 13, color: DARK, valign: "top", margin: 0, isTextBox: true });
+s.addText("Entregue", { x: 6.2, y: 1.5, w: 3.3, h: 0.3, fontFace: F, fontSize: 15, bold: true, color: DARK, margin: 0, isTextBox: true });
+s.addText(bullets(["Modelo e API testados (8 testes).", "CI no GitHub Actions passando.", "Código, notebook e relatório no repositório."]),
+  { x: 6.2, y: 1.85, w: 3.3, h: 1.4, fontFace: F, fontSize: 12, color: DARK, valign: "top", margin: 0, isTextBox: true });
+s.addText("Próximos passos", { x: 6.2, y: 3.3, w: 3.3, h: 0.3, fontFace: F, fontSize: 15, bold: true, color: DARK, margin: 0, isTextBox: true });
+s.addText(bullets(["Calibrar as probabilidades.", "Validar com dados brasileiros (PNS) e com profissionais de saúde."]),
+  { x: 6.2, y: 3.65, w: 3.3, h: 1.0, fontFace: F, fontSize: 12, color: DARK, valign: "top", margin: 0, isTextBox: true });
 
 pres.writeFile({ fileName: "../apresentacao_diabetes_ods3.pptx" }).then(() => console.log("ok"));
